@@ -1,0 +1,130 @@
+<%= "#{pluralize(@incidents.count, 'incident')}" %>
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.first_name %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.last_name %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.department %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.job_title %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.date_of_hire %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.description %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.date_of_incident %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.date_reported %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.location_of_incident %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.affected_body_part %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.type_of_injury %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.type_of_incident %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.treatment %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.property_damage %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.supervisor_last_name %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.supervisor_first_name %>
+                <% end %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% @incidents.each do |i| %>
+                    <%= i.suggested_corrective_action %>
+                <% end %>
+            </td>
+        </tr>
+    </tbody>
+</table>
