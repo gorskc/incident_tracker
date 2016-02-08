@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe 'Incident', type: :model do
     before(:each) do
         @incident1 = Incident.new(
@@ -34,16 +35,16 @@ RSpec.describe 'Incident', type: :model do
     expect(@incident1.job_title).to eq('Job')
   end
   it 'should have a date_of_hire' do
-    expect(@incident1.date_of_hire).to eq('2011-03-01')
+    expect(@incident1.date_of_hire).to eq Date.new(2011,3,1)
   end
   it 'should have a description' do
     expect(@incident1.description).to eq('test injury')
   end
   it 'should have a date_of_incident' do
-    expect(@incident1.date_of_incident).to eq('2016-02-02')
+    expect(@incident1.date_of_incident).to eq Date.new(2016,2,2)
   end
   it 'should have a date_reported' do
-    expect(@incident1.date_reported).to eq('2016-02-02')
+    expect(@incident1.date_reported).to eq Date.new(2016,2,2)
   end
   it 'should have a location_of_incident' do
     expect(@incident1.location_of_incident).to eq('Test location')
