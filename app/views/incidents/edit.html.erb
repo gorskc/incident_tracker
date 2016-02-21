@@ -1,0 +1,74 @@
+<%= form_for @incident do |f| %>
+    <div class="field" >
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+    </div>
+    <div class= "field" >
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+    </div>
+    <div class= "field" >
+        <%= f.label :department %><br>
+        <%= f.text_field :department %>
+    </div>
+    <div class= "field" >
+        <%= f.label :job_title %><br>
+        <%= f.text_field :job_title %>
+    </div>
+    <div class= "field" >
+        <%= f.label :date_of_hire %><br>
+        <%= f.date_field :date_of_hire %>
+    </div>
+    <div class= "field" >
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+    </div>
+    <div class= "field" >
+        <%= f.label :date_of_incident %><br>
+        <%= f.date_field :date_of_incident %>
+    </div>
+    <div class= "field" >
+        <%= f.label :date_reported %><br>
+        <%= f.date_field :date_reported %>
+    </div>
+    <div class= "field" >
+        <%= f.label :location_of_incident %><br>
+        <%= f.text_field :location_of_incident %>
+    </div>
+    <div class= "field" >
+        <%= f.label :affected_body_part %><br>
+        <%= f.text_field :affected_body_part %>
+    </div>
+    <div class= "field" >
+        <%= f.label :type_of_injury %><br>
+        <%= f.text_field :type_of_injury %>
+    </div>
+    <div class= "field" >
+        <%= f.label :type_of_incident %><br>
+        <%= f.text_field :type_of_incident %>
+    </div>
+    <div class= "field" >
+        <%= f.label :treatment %><br>
+        <%= f.text_field :treatment %>
+    </div>
+    <div class= "field" >
+        <%= f.label :property_damage%><br>
+        <%= f.text_field :property_damage %>
+    </div>
+    <div class= "field" >
+        <%= f.label :supervisor_last_name %><br>
+        <%= f.text_field :supervisor_last_name %>
+    </div>
+    <div class= "field" >
+        <%= f.label :supervisor_first_name %><br>
+        <%= f.text_field :supervisor_first_name %>
+    </div>
+    <div class= "field" >
+        <%= f.label :suggested_corrective_action %><br>
+        <%= f.text_field :suggested_corrective_action %>
+    </div>
+    <div class= "actions" >
+        <%= f.submit %>
+    </div>
+<% end %>
+

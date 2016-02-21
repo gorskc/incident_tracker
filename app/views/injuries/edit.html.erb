@@ -1,0 +1,21 @@
+<h1>Add Injury to <%= @incident.date_of_incident %></h1>
+
+<%= form_for [@incident, @injury] do |f| %>
+    <fieldset>
+        <div class= "field">
+            <%= f.label :injury_type %><br>
+            <%= f.text_field :injury_type %>
+        </div>
+        <div class= "field">
+            <%= f.label :affected_body_part %><br>
+            <%= f.text_field :affected_body_part %>
+        </div>
+        <div class= "field">
+            <%= f.label :treatment %><br>
+            <%= f.text_field :treatment %>
+        </div>
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    </fieldset>
+<% end %>
