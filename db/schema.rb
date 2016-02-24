@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203203154) do
+ActiveRecord::Schema.define(version: 20160223200546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "corrective_actions", force: :cascade do |t|
+    t.integer  "incident_id"
+    t.text     "action"
+    t.date     "expected_completion_date"
+    t.date     "actual_completion_date"
+    t.boolean  "complete"
+    t.integer  "incidents_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "corrective_actions", ["incidents_id"], name: "index_corrective_actions_on_incidents_id", using: :btree
 
   create_table "incidents", force: :cascade do |t|
     t.string   "first_name"
@@ -23,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160203203154) do
     t.string   "job_title"
     t.date     "date_of_hire"
     t.text     "description"
-    t.datetime "date_of_incident"
+    t.date     "date_of_incident"
     t.date     "date_reported"
     t.text     "location_of_incident"
     t.string   "affected_body_part"
@@ -38,4 +51,26 @@ ActiveRecord::Schema.define(version: 20160203203154) do
     t.datetime "updated_at"
   end
 
+  create_table "injuries", force: :cascade do |t|
+    t.integer  "incident_id"
+    t.string   "injury_type"
+    t.string   "affected_body_part"
+    t.string   "treatment"
+    t.integer  "incidents_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "injuries", ["incidents_id"], name: "index_injuries_on_incidents_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_foreign_key "corrective_actions", "incidents"
+  add_foreign_key "injuries", "incidents"
 end

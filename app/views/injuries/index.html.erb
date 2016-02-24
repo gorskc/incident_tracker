@@ -1,0 +1,20 @@
+<h1>Injuries for <%= @incident.date_of_incident %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Injury Type</td>
+      <td>Affected Body Part</td>
+      <td>Treatment</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @injuries.each do |injury| %>
+      <tr>
+        <td><%= injury.injury_type %></td>
+        <td><%= injury.affected_body_part %></td>
+        <td><%= injury.treatment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -3,130 +3,54 @@
 <table>
     <thead>
         <tr>
-            <td>Name</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Department</td>
+            <td>Job Title</td>
+            <td>Date of Hire</td>
+            <td>Description</td>
+            <td>Date of Incident</td>
+            <td>Date Reported</td>
+            <td>Location of Incident</td>
+            <td>Affected Body Part</td>
+            <td>Type of Injury</td>
+            <td>Type of Incident</td>
+            <td>Treatment</td>
+            <td>Property Damage</td>
+            <td>Supervisor Last Name</td>
+            <td>Supervisor First Name</td>
+            <td>Suggested Corrective Action</td>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                <% @incidents.each do |i| %>
-                    <%= i.first_name %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.last_name %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.department %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.job_title %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.date_of_hire %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.description %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.date_of_incident %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.date_reported %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.location_of_incident %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.affected_body_part %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.type_of_injury %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.type_of_incident %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.treatment %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.property_damage %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.supervisor_last_name %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.supervisor_first_name %>
-                <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% @incidents.each do |i| %>
-                    <%= i.suggested_corrective_action %>
+                <% @incidents.each do |incident| %>
+                    <%= incident.first_name %>
+                    <%= incident.last_name %>
+                    <%= incident.department %>
+                    <%= incident.job_title %>
+                    <%= incident.date_of_hire %>
+                    <%= incident.description %>
+                    <%= incident.date_of_incident %>
+                    <%= incident.date_reported %>
+                    <%= incident.location_of_incident %>
+                    <%= incident.affected_body_part %>
+                    <%= incident.type_of_injury %>
+                    <%= incident.type_of_incident %>
+                    <%= incident.treatment %>
+                    <%= incident.property_damage %>
+                    <%= incident.supervisor_last_name %>
+                    <%= incident.supervisor_first_name %>
+                    <%= incident.suggested_corrective_action %>
+                    <%= link_to('Edit Incident', edit_incident_path(incident)) %>
                 <% end %>
             </td>
         </tr>
     </tbody>
 </table>
 
-<%= link_to 'New incident', new_incident_path %>
+<%= link_to 'New Incident', new_incident_path %>
+
+
+

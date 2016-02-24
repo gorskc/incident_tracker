@@ -1,8 +1,9 @@
 class InjuriesController < ApplicationController
     before_action :set_incident
-    before_action :set_injury, only: [:show, :edit, :update, :new, :create]
+    before_action :set_injury, only: [:show, :edit, :update]
     
     def index
+        @injuries = @incident.injuries.all
     end
     
     def new
@@ -13,7 +14,7 @@ class InjuriesController < ApplicationController
         @injury = @incident.injuries.build(injury_params)
         
         if @injury.save
-            redirect_to [@incident, @injury], notice: 'Injury saved.'
+            redirect_to incident_injuries_path(@incident), notice: 'Injury saved.'
         else
             flash.now[:alert] = 'Injury not saved.'
             render :new
@@ -21,12 +22,11 @@ class InjuriesController < ApplicationController
     end
     
     def edit
-        @injury = Incident.injuries.find(params[:id])
     end
     
     def update
         if @injury.update(injury_params)
-            redirect_to incident_injury_path(@incident), notice: 'Injury updated.'
+            redirect_to incident_injuries_path(@incident), notice: 'Injury updated.'
         else
             flash.now[:alert] = 'Injury not saved.'
             render :edit
@@ -34,7 +34,6 @@ class InjuriesController < ApplicationController
     end
     
     def show
-        @injury = Incident.injuries.find(params[:id])
     end
     
     private
@@ -49,4 +48,5 @@ class InjuriesController < ApplicationController
         def injury_params
             params.require(:injury).permit(:injury_type, :affected_body_part, :treatment)
         end
+
 end

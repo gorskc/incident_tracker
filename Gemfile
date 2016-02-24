@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'puma' #used by Heroku
+gem 'bcrypt'
+gem 'email_validator'
+gem 'warden'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

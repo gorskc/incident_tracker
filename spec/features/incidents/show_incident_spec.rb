@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature 'Viewing an incident', type: :feature do
+    before do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+    end
     scenario 'Shows the incident details' do
         incident = FactoryGirl.create(:incident)
         
@@ -31,5 +35,15 @@ RSpec.feature 'Viewing an incident', type: :feature do
             @incident2 = FactoryGirl.create(:incident)
             @incident3 = FactoryGirl.create(:incident)
         end
+    end
+    
+    scenario 'shows the incident injuries' do
+      injury1 = @incident1.injuries.create(injury_type: 'Sprain/strain', affected_body_part: 'Left ankle', treatment: 'First aid')
+      
+      visit incident_url(@incident1)
+      
+      expect(page).to have_content('Task one')
+      expect(page).to have_content('Task two')
+      expect(page).to have_content('Task three')
     end
 end

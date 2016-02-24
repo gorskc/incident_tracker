@@ -5,10 +5,10 @@ class CreateIncidents < ActiveRecord::Migration
       t.string :last_name
       t.string :department
       t.string :job_title
-      t.datetime :date_of_hire
+      t.date :date_of_hire
       t.text :description
-      t.datetime :date_of_incident
-      t.datetime :date_reported
+      t.date :date_of_incident
+      t.date :date_reported
       t.text :location_of_incident
       t.string :affected_body_part
       t.string :type_of_injury

@@ -1,1 +1,51 @@
 <h1><%= @incident.date_of_incident %></h1>
+<h2><%= @incident.description %></h2>
+
+<p><%= @incident.first_name %></p>
+<p><%= @incident.last_name %></p>
+<p><%= @incident.department %></p>
+<p><%= @incident.job_title %></p>
+<p><%= @incident.date_of_hire.to_s %></p>
+<p><%= @incident.date_reported.to_s %></p>
+<p><%= @incident.location_of_incident %></p>
+<p><%= @incident.affected_body_part %></p>
+<p><%= @incident.type_of_injury %></p>
+<p><%= @incident.type_of_incident %></p>
+<p><%= @incident.treatment %></p>
+<p><%= @incident.property_damage %></p>
+<p><%= @incident.supervisor_last_name %></p>
+<p><%= @incident.supervisor_first_name %></p>
+<p><%= @incident.suggested_corrective_action %></p>
+
+
+
+<%= link_to 'Add Injury', new_incident_injury_path(@incident) %>
+
+
+<article>
+  <header>
+    <h2>Injuries</h2>
+    <table>
+      <thead>
+        <tr>
+          <td>Injury Type</td>
+          <td>Affected Body Part</td>
+          <td>Treatment</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @injuries.each do |injury| %>
+        <tr>
+          <td><%= injury.injury_type %></td>
+          <td><%= injury.affected_body_part %></td>
+          <td><%= injury.treatment %></td>
+          <td><%= link_to('Edit Injury', edit_incident_injury_path(@incident, injury)) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </header>
+</article>
+
+<%= link_to 'Add Corrective Action', new_incident_corrective_action_path(@incident) %>
+

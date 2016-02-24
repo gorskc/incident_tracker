@@ -1,10 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature 'Editing an incident', type: :feature do
+    before do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+    end
     scenario 'updates the incident and shows the incident updated details' do
         incident = FactoryGirl.create(:incident)
         
-        visit incident_url(incident)
+        visit incidents_url(incident)
         
         click_link 'Edit Incident'
         

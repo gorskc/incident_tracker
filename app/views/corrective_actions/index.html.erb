@@ -1,0 +1,23 @@
+<h1>Corrective Actions for <%= @incident.date_of_incident %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Action</td>
+      <td>Expected Completion Date</td>
+      <td>Actual Completion Date</td>
+      <td>Complete</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @corrective_actions.each do |action| %>
+      <tr>
+        <td><%= action.action %></td>
+        <td><%= action.expected_completion_date %></td>
+        <td><%= action.actual_completion_date %></td>
+        <td><%= action.complete %></td>
+        <td><%= link_to('Edit Corrective Action', edit_incident_corrective_action_path(@incident, action))%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
