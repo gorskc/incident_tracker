@@ -49,3 +49,12 @@
 //
 // @include motion-ui-transitions;
 // @include motion-ui-animations;
+
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url(font-path('opensans-regular-webfont.eot') + "/#iefix") format('embedded-opentype'),
+         url(font-path('opensans-regular-webfont.woff')) format('woff'),
+         url(font-path('opensans-regular-webfont.ttf')) format('truetype'),
+         url(font-path('opensans-regular-webfont.svg') + "#OpenSansRegular") format('svg');
+}

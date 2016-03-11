@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
@@ -28,6 +26,7 @@ gem 'bcrypt'
 gem 'email_validator'
 gem 'warden'
 gem 'foundation-rails'
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -43,7 +42,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'faker'
 end
 
 group :development do
