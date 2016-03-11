@@ -1,6 +1,6 @@
 <%= "#{pluralize(@incidents.count, 'incident')}" %>
-
-<table class="hover" id="incidents">
+<%= link_to 'New Incident', new_incident_path, class: 'button radius' %>
+    <table class="hover" id="incidents">
     <thead>
         <tr>
             <td>First Name</td>
@@ -42,7 +42,9 @@
     </tbody>
 </table>
 
-<%= link_to 'New Incident', new_incident_path, class: 'button radius' %>
+
+
+
 
 
 

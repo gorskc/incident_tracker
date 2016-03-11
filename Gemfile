@@ -28,8 +28,7 @@ gem 'bcrypt'
 gem 'email_validator'
 gem 'warden'
 gem 'foundation-rails'
-gem 'jquery-datatables-rails'
-gem 'jquery-ui-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,4 +56,8 @@ group :test do
   gem 'capybara' 
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+end
+
+group :production do
+  gem 'rails_12factor'
 end

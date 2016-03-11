@@ -1,31 +1,31 @@
 <%= render 'shared/errors', object: @corrective_action %>
 
 <%= form_for ([@incident, @corrective_action]) do |f| %>
-    <div class="row">
-        <div class="row" >
-            <div class="small-12 columns">
-                <%= f.label :action %>
-                <%= f.text_area :action %>
-            </div>
-        <div class="row" >    
-            <div class="small-4 columns">
-                <%= f.label :expected_completion_date %>
-                <%= f.date_field :expected_completion_date %>            
-            </div>
-            <div class="small-4 columns" >
-                <%= f.label :actual_completion_date %>
-                <%= f.date_field :actual_completion_date %>
-            </div>
-            <div class="small-4 columns">
-                <%= f.label :complete %>
-                <%= f.check_box :complete, {}, "true", "false" %>
-            </div>
+    <div class="row" >
+        <div class="small-12 columns">
+            <%= f.label :action %>
+            <%= f.text_area :action %>
         </div>
-        <div class="row" >
-            <div class="small-6 columns">
-                <%= f.submit %>
-            </div>
-        </div>
-        <% end %>
     </div>
+    <div class="row" >    
+        <div class="small-4 columns">
+            <%= f.label :expected_completion_date %>
+            <%= f.date_field :expected_completion_date %>            
+        </div>
+        <div class="small-4 columns" >
+            <%= f.label :actual_completion_date %>
+            <%= f.date_field :actual_completion_date %>
+        </div>
+        <div class="small-4 columns">
+            <%= f.label :complete %>
+            <%= f.check_box :complete, {}, "true", "false" %>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="small-6 columns">
+            <%= f.submit %>
+        </div>
+    </div>
+    <% end %>
+
         
