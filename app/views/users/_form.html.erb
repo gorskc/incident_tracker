@@ -1,24 +1,27 @@
-<%= form_for @user do |f| %>
-  <%= render 'shared/errors', object: @user %>
-  <fieldset>
-    <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-    </div>
-    <div class="field">
-        <%= f.label :email %><br>
-        <%= f.email_field :email %>
-    </div>
-    <div class="field">
-        <%= f.label :password %><br>
-        <%= f.password_field :password %>
-    </div>
-    <div class="field">
-        <%= f.label :password_confirmation %><br>
-        <%= f.password_field :password_confirmation %>
-    </div>
-    <div class="actions">
-        <%= f.submit %>
-    </div>
-  </fieldset>
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+    <%= form_for @user do |f| %>
+      <%= render 'shared/errors', object: @user %>
+      <fieldset class="fieldset-border">
+        <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="field">
+            <%= f.label :email %><br>
+            <%= f.email_field :email, class: 'form-control' %>
+        </div>
+        <div class="field">
+            <%= f.label :password %><br>
+            <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="field">
+            <%= f.label :password_confirmation %><br>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+      </fieldset>
 <% end %>
+

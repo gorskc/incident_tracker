@@ -27,13 +27,7 @@ RSpec.describe Incident, type: :model do
     
     it { is_expected.to have_db_column(:location_of_incident) }
     
-    it { is_expected.to have_db_column(:affected_body_part) }
-    
-    it { is_expected.to have_db_column(:type_of_injury) }
-    
     it { is_expected.to have_db_column(:type_of_incident) }
-    
-    it { is_expected.to have_db_column(:treatment) }
     
     it { is_expected.to have_db_column(:property_damage) }
   

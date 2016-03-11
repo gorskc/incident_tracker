@@ -1,0 +1,69 @@
+<%= render 'shared/errors', object: @incident %>
+<%= form_for @incident do |f| %>
+    <div class="row">
+        <div class="small-6 columns">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name %>
+        </div>
+        <div class="small-6 columns">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-4 columns">
+            <%= f.label :department%>
+            <%= f.text_field :department %>
+        </div>
+        <div class="small-4 columns">
+            <%= f.label :job_title %>
+            <%= f.text_field :job_title %>
+        </div>
+        <div class="small-4 columns">
+            <%= f.label :date_of_hire %>
+            <%= f.date_field :date_of_hire %>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="small-6 columns">
+            <%= f.label :supervisor_first_name %>
+            <%= f.text_field :supervisor_first_name %>
+        </div>
+        <div class="small-6 columns">
+            <%= f.label :supervisor_last_name %>
+            <%= f.text_field :supervisor_last_name %>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="large-12 columns">
+            <%= f.label :description %>
+            <%= f.text_area :description %>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="small-4 columns">
+            <%= f.label :date_of_incident %>
+            <%= f.date_field :date_of_incident %>
+        </div>
+        <div class="small-4 columns">
+            <%= f.label :date_reported %>
+            <%= f.date_field :date_reported %>
+        </div>
+        <div class="small-4 columns">
+            <%= f.label :location_of_incident %>
+            <%= f.text_field :location_of_incident %>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="small-4 columns">
+            <%= f.label :type_of_incident %>
+            <%= f.select :type_of_incident, ["Select an option", "Injury", "Near miss", "Property damage"] %>
+        </div>
+        <div class="large-8 columns" >
+            <%= f.label :suggested_corrective_action %>
+            <%= f.text_area :suggested_corrective_action %>
+        </div>
+    <div class="row" >
+        <%= f.submit %>
+    </div>
+<% end %>    

@@ -11,7 +11,6 @@ RSpec.feature 'Showing a list of injuries for an incident' do
     injury2 = incident.injuries.create(injury_type: 'Nip/pinch', affected_body_part: 'Right index finger', treatment: 'First aid')
     
     visit incident_injuries_path(incident)
-    #/incidents/:incident_id/injuries(.:format)
     
     expect(page).to have_content(injury1.injury_type)
     expect(page).to have_content(injury2.injury_type)

@@ -1,18 +1,26 @@
-<h1>Sign In</h1>
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+    <h2><strong>Sign In</strong></h2>
+    <%= form_tag sign_in_path do %>
+    <fieldset>
+      <div class="field">
+        <%= label_tag :email %><br />
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div class="field">
+        <%= label_tag :password %><br />
+        <%= password_field_tag :password %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Sign In", class:'button radius' %>
+      </div>
+    </fieldset>
+    <% end %>
+  </div>  
+</div>
 
-<%= form_tag sign_in_path do %>
 
-  <fieldset>
-    <div class="field">
-      <%= label_tag :email %><br />
-      <%= text_field_tag :email, params[:email] %>
-    </div>
-    <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
-    </div>
-    <div class="actions">
-      <%= submit_tag "Sign In" %>
-    </div>
-  </fieldset>
-<% end %>
+
+
+
+ 

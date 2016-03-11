@@ -8,7 +8,9 @@ RSpec.feature 'Viewing an incident', type: :feature do
     scenario 'Shows the incident details' do
         incident = FactoryGirl.create(:incident)
         
-        visit incident_url(incident)
+        visit incidents_path
+        click_link 'Show Incident'
+        expect(current_path).to eq(incident_path(incident))
         
         expect(page).to have_content(incident.first_name)
         expect(page).to have_content(incident.last_name)
@@ -19,10 +21,7 @@ RSpec.feature 'Viewing an incident', type: :feature do
         expect(page).to have_content(incident.date_of_incident)
         expect(page).to have_content(incident.date_reported)
         expect(page).to have_content(incident.location_of_incident)
-        expect(page).to have_content(incident.affected_body_part)
-        expect(page).to have_content(incident.type_of_injury)
         expect(page).to have_content(incident.type_of_incident)
-        expect(page).to have_content(incident.treatment)
         expect(page).to have_content(incident.property_damage)
         expect(page).to have_content(incident.supervisor_last_name)
         expect(page).to have_content(incident.supervisor_first_name)
@@ -38,9 +37,9 @@ RSpec.feature 'Viewing an incident', type: :feature do
     end
     
     scenario 'shows the incident injuries' do
-      injury1 = @incident1.injuries.create(injury_type: 'Sprain/strain', affected_body_part: 'Left ankle', treatment: 'First aid')
+      injury1 = @incident.injuries.create(injury_type: 'Sprain/strain', affected_body_part: 'Left ankle', treatment: 'First aid')
       
-      visit incident_url(@incident1)
+      visit incident_url(injury1)
       
       expect(page).to have_content('Task one')
       expect(page).to have_content('Task two')

@@ -9,10 +9,7 @@ FactoryGirl.define do
         date_of_incident            { Faker::Date.backward(1) }
         date_reported               { Faker::Date.backward(1) }
         location_of_incident        { Faker::Address.building_number }
-        affected_body_part          { Faker::Hacker.noun }
-        type_of_injury              { Faker::Hacker.noun }
         type_of_incident            { Faker::Hacker.noun }
-        treatment                   { Faker::Hacker.noun }
         property_damage             { Faker::Hacker.noun }
         supervisor_last_name        { Faker::Name.last_name }
         supervisor_first_name       { Faker::Name.first_name }

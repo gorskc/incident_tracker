@@ -1,13 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature 'Creating a new user', type: :feature do 
-  before do
-    @user = FactoryGirl.create(:user)
-    sign_in(@user)
-  end
+  user = FactoryGirl.create(:user)
   
   scenario 'succeeds with valid values' do 
-    visit '/users'
+    visit '/'
     click_link 'New User' 
     
     expect(current_url).to eq(new_user_url)
@@ -25,7 +22,7 @@ RSpec.feature 'Creating a new user', type: :feature do
   end
   
   it "does not save the user if it's invalid" do
-    visit '/users'
+    visit '/'
     click_link 'New User'
     
     expect { 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223200546) do
+ActiveRecord::Schema.define(version: 20160225002602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,7 @@ ActiveRecord::Schema.define(version: 20160223200546) do
     t.date     "date_of_incident"
     t.date     "date_reported"
     t.text     "location_of_incident"
-    t.string   "affected_body_part"
-    t.string   "type_of_injury"
     t.string   "type_of_incident"
-    t.string   "treatment"
     t.string   "property_damage"
     t.string   "supervisor_last_name"
     t.string   "supervisor_first_name"

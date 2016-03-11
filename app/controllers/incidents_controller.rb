@@ -26,7 +26,7 @@ class IncidentsController < ApplicationController
     end
     
     def edit
-        @incident = Incident.find(params[:id])
+        #@incident = Incident.find(params[:id])
     end
     
     def update
@@ -40,7 +40,7 @@ class IncidentsController < ApplicationController
     
     private
         def incident_params
-            params.require(:incident).permit(:first_name, :last_name, :department, :job_title, :date_of_hire, :description, :date_of_incident, :date_reported, :location_of_incident, :affected_body_part, :type_of_injury, :type_of_incident, :treatment, :property_damage, :supervisor_last_name, :supervisor_first_name, :suggested_corrective_action)
+            params.require(:incident).permit(:first_name, :last_name, :department, :job_title, :date_of_hire, :description, :date_of_incident, :date_reported, :location_of_incident, :type_of_incident, :property_damage, :supervisor_last_name, :supervisor_first_name, :suggested_corrective_action)
         end
         
         def set_incident

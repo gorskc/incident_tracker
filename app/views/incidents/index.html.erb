@@ -1,6 +1,6 @@
 <%= "#{pluralize(@incidents.count, 'incident')}" %>
 
-<table>
+<table class="hover" id="incidents">
     <thead>
         <tr>
             <td>First Name</td>
@@ -12,45 +12,37 @@
             <td>Date of Incident</td>
             <td>Date Reported</td>
             <td>Location of Incident</td>
-            <td>Affected Body Part</td>
-            <td>Type of Injury</td>
             <td>Type of Incident</td>
-            <td>Treatment</td>
-            <td>Property Damage</td>
             <td>Supervisor Last Name</td>
             <td>Supervisor First Name</td>
             <td>Suggested Corrective Action</td>
+            <td colspan="2">Action</td>
         </tr>
     </thead>
     <tbody>
+        <% @incidents.each do |incident| %>
         <tr>
-            <td>
-                <% @incidents.each do |incident| %>
-                    <%= incident.first_name %>
-                    <%= incident.last_name %>
-                    <%= incident.department %>
-                    <%= incident.job_title %>
-                    <%= incident.date_of_hire %>
-                    <%= incident.description %>
-                    <%= incident.date_of_incident %>
-                    <%= incident.date_reported %>
-                    <%= incident.location_of_incident %>
-                    <%= incident.affected_body_part %>
-                    <%= incident.type_of_injury %>
-                    <%= incident.type_of_incident %>
-                    <%= incident.treatment %>
-                    <%= incident.property_damage %>
-                    <%= incident.supervisor_last_name %>
-                    <%= incident.supervisor_first_name %>
-                    <%= incident.suggested_corrective_action %>
-                    <%= link_to('Edit Incident', edit_incident_path(incident)) %>
-                <% end %>
-            </td>
+            <td><%= incident.first_name %></td>
+            <td><%= incident.last_name %></td>
+            <td><%= incident.department %></td>
+            <td><%= incident.job_title %></td>
+            <td><%= incident.date_of_hire %></td>
+            <td><%= incident.description.truncate_words(10) %></td>
+            <td><%= incident.date_of_incident %></td>
+            <td><%= incident.date_reported %></td>
+            <td><%= incident.location_of_incident %></td>        
+            <td><%= incident.type_of_incident %></td>    
+            <td><%= incident.supervisor_last_name %></td>
+            <td><%= incident.supervisor_first_name %></td>
+            <td><%= incident.suggested_corrective_action.truncate_words(10) %></td>
+            <td><%= link_to 'Edit Incident', edit_incident_path(incident)%></td>
+            <td><%= link_to 'Show Incident', incident_path(incident) %></td>
         </tr>
+        <% end %>
     </tbody>
 </table>
 
-<%= link_to 'New Incident', new_incident_path %>
+<%= link_to 'New Incident', new_incident_path, class: 'button radius' %>
 
 
 

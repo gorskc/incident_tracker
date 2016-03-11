@@ -1,20 +1,26 @@
 <%= render 'shared/errors', object: @injury %>
 <%= form_for ([@incident, @injury]) do |f| %>
-    <fieldset>
-        <div class= "field">
-            <%= f.label :injury_type %><br>
-            <%= f.text_field :injury_type %>
+    <div class="row">
+        <div class="small-6 columns" >
+            <%= f.label :injury_type %>
+            <%= f.select :injury_type, ["Select an option", "Strain, sprain, tear", "Cut, laceration", "Fracture",
+            "Scratch, abrasion", "Bruise, contusion", "Foreign body", "Puncture", "Burns", "Heat stress, heat related illness",
+            "Frostbite, cold related injury", "Electric shock, electrocution", "Exposure to biological hazards", "Allergy, sensitivity reaction",
+            "Amputation"] %>
+    <div class="row">
+        <div class="small-5 columns">
+            <%= f.label :affected_body_part %>
+            <%= f.select :affected_body_part, ["Select an option", "Toe(s)", "Ankle", "Foot", "Leg", "Hip", "Abdomen", "Chest", "Back", "Neck", 
+            "Face", "Eye", "Ear", "Mouth", "Nose", "Shoulder", "Arm", "Wrist", "Hand", "Finger"] %>
         </div>
-        <div class= "field">
-            <%= f.label :affected_body_part %><br>
-            <%= f.text_field :affected_body_part %>
+        <div class="small-7 columns">
+            <%= f.label :treatment %>
+            <%= f.select :treatment, ["Select an option", "First Aid", "Prescription from physician", "Hospital admission"] %>
         </div>
-        <div class= "field">
-            <%= f.label :treatment %><br>
-            <%= f.text_field :treatment %>
-        </div>
-        <div class="actions">
+    </div>
+    <div class="row">
+        <div class="small-6 columns">
             <%= f.submit %>
         </div>
-    </fieldset>
+    </div>
 <% end %>

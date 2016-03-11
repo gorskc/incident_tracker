@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
@@ -25,7 +27,9 @@ gem 'puma' #used by Heroku
 gem 'bcrypt'
 gem 'email_validator'
 gem 'warden'
-
+gem 'foundation-rails'
+gem 'jquery-datatables-rails'
+gem 'jquery-ui-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,6 +50,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'letter_opener'
 end
 
 group :test do

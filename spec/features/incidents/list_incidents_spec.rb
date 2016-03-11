@@ -23,10 +23,7 @@ RSpec.feature 'Listing all incidents', type: :feature do
     date_of_incident: '2016-02-02',
     date_reported: '2016-02-02',
     location_of_incident: 'On the path north of the Health Sciences Building T-wing bridge before the bus stop',
-    affected_body_part: 'right knee',
-    type_of_injury: 'abrasion', 
     type_of_incident: 'First aid',
-    treatment: 'First aid',
     property_damage: 'None',
     supervisor_last_name: 'Smith',
     supervisor_first_name: 'Sarah',
@@ -47,10 +44,7 @@ RSpec.feature 'Listing all incidents', type: :feature do
     expect(page).to have_content(incident1.date_of_incident)
     expect(page).to have_content(incident1.date_reported)
     expect(page).to have_content(incident1.location_of_incident)
-    expect(page).to have_content(incident1.affected_body_part)
-    expect(page).to have_content(incident1.type_of_injury)
     expect(page).to have_content(incident1.type_of_incident)
-    expect(page).to have_content(incident1.treatment)
     expect(page).to have_content(incident1.property_damage)
     expect(page).to have_content(incident1.supervisor_last_name)
     expect(page).to have_content(incident1.supervisor_first_name)
