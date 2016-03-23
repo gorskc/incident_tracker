@@ -1,5 +1,7 @@
 Incident.destroy_all
 
+INCIDENT_TYPE = ['Injury', 'Near miss', 'Property damage']
+
 100.times do
     Incident.create(
         first_name: Faker::Name.first_name,
@@ -11,8 +13,7 @@ Incident.destroy_all
         date_of_incident: Faker::Date.backward(1),
         date_reported: Faker::Date.backward(1),
         location_of_incident: Faker::Address.building_number,
-        type_of_incident: Faker::Hacker.noun,
-        property_damage: Faker::Hacker.noun,
+        type_of_incident: INCIDENT_TYPE.sample,
         supervisor_last_name: Faker::Name.last_name,
         supervisor_first_name: Faker::Name.first_name,
         suggested_corrective_action: Faker::Hacker.phrases
