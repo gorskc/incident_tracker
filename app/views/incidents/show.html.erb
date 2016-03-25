@@ -1,3 +1,8 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
 <div class="row">
   <header>
     <h2>Incident Details</h2>
@@ -87,12 +92,3 @@
       </div>
     </div>
 </div>
-
-
-<div class="row">
-  <div class="col-xs-6">
-    <h3>Total Incidents by Department</h3>
-    <%= pie_chart @incidents.group(:department).count %>
-  </div>
-</div>
-

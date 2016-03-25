@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require_directory
+//= require highcharts
+//= require highcharts/highcharts
+//= require incidents
 
 
 //= require foundation
