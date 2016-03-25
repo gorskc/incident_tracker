@@ -15,7 +15,7 @@
 //= require jquery-ui
 //= require_directory
 //= require highcharts
-//= require highcharts/highcharts
+//= require highcharts/highcharts-more
 //= require incidents
 
 
