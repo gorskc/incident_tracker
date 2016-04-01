@@ -12,14 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_directory
-//= require highcharts
-//= require highcharts/highcharts-more
-//= require incidents
-
-
 //= require foundation
 //= require_tree .
 
 
 $(function(){ $(document).foundation(); });
+

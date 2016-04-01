@@ -50,4 +50,5 @@ RSpec.feature 'Listing all incidents', type: :feature do
     expect(page).to have_content(incident1.supervisor_first_name)
     expect(page).to have_content(incident1.suggested_corrective_action)
   end
+  
 end

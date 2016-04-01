@@ -37,6 +37,9 @@ class IncidentsController < ApplicationController
         end
     end
     
+    def incidents_chart
+        @incidents_by_department = Incident.group(:department).count
+    end
     
     private
         def incident_params
@@ -46,4 +49,6 @@ class IncidentsController < ApplicationController
         def set_incident
             @incident = Incident.find(params[:id])
         end
+        
+
 end

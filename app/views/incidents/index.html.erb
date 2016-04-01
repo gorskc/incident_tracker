@@ -1,3 +1,7 @@
+
+
+<div id="incidents_chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
 <%= "#{pluralize(@incidents.count, 'incident')}" %>
 <%= link_to 'New Incident', new_incident_path, class: 'button radius' %>
     <table class="hover" id="incidents">
@@ -41,7 +45,6 @@
         <% end %>
     </tbody>
 </table>
-
 
 
 

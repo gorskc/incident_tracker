@@ -1,12 +1,20 @@
 Incident.destroy_all
 
 INCIDENT_TYPE = ['Injury', 'Near miss', 'Property damage']
+DEPARTMENTS = ["American Ethnic Studies", "American Indian Studies", "Anthropology", "Applied Mathematics",
+    "Art, Art History & Design", "Asian Languages & Literature", "Astronomy", "Biology", "Chemistry", "Classics",
+    "Communication", "Comparative History of Ideas", "Comparative Literature, Cinema & Media", "Dance", "Drama",
+    "DXARTS", "Economics", "English", "French & Italian Studies", "Gender, Women & Sexuality Studies", "Geography",
+    "Germanics", "History", "Jackson School of International Studies", "Law, Societies & Justice", "Linguistics",
+    "Mathematics", "Music", "Near Eastern Languages & Civilization", "Philosophy", "Physics", "Political Science",
+    "Psychology", "Scandinavian Studies", "Slavic Languages & Literatures", "Sociology", "Spanish & Portuguese Studies",
+    "Speech & Hearing Sciences", "Statistics"]
 
 100.times do
     Incident.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
-        department: Faker::Commerce.department,
+        department: DEPARTMENTS.sample,
         job_title: Faker::Name.title,
         date_of_hire: Faker::Date.backward(522),
         description: Faker::Hacker.phrases,
