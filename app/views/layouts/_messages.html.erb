@@ -1,9 +1,9 @@
 <% flash.each do |key, value| %>
-    <div class="<%= foundation_flash_class(key) %>" data-closable>
-        <%= value %>
-        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+  <div class="<%= foundation_flash_class(key) %>" data-closable>
+    <%= value %>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>
 

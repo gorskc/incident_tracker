@@ -10,6 +10,7 @@ DEPARTMENTS = ["American Ethnic Studies", "American Indian Studies", "Anthropolo
     "Psychology", "Scandinavian Studies", "Slavic Languages & Literatures", "Sociology", "Spanish & Portuguese Studies",
     "Speech & Hearing Sciences", "Statistics"]
 
+
 100.times do
     Incident.create(
         first_name: Faker::Name.first_name,
@@ -18,8 +19,8 @@ DEPARTMENTS = ["American Ethnic Studies", "American Indian Studies", "Anthropolo
         job_title: Faker::Name.title,
         date_of_hire: Faker::Date.backward(522),
         description: Faker::Hacker.phrases,
-        date_of_incident: Faker::Date.backward(1),
-        date_reported: Faker::Date.backward(1),
+        date_of_incident: Faker::Date.between('2016-01-01',Date.today),
+        date_reported: Faker::Date.between('2016-01-01',Date.today),
         location_of_incident: Faker::Address.building_number,
         type_of_incident: INCIDENT_TYPE.sample,
         supervisor_last_name: Faker::Name.last_name,

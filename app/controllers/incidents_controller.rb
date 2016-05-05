@@ -2,7 +2,8 @@ class IncidentsController < ApplicationController
     before_action :set_incident, only: [:show, :update, :edit]
     
     def index
-        @incidents = Incident.all
+        @incidents = Incident.all 
+        @incidents_month = @incidents.group_by { |i| i.date_of_incident.beginning_of_month }
     end
     
     def new
@@ -26,7 +27,6 @@ class IncidentsController < ApplicationController
     end
     
     def edit
-        #@incident = Incident.find(params[:id])
     end
     
     def update
@@ -37,9 +37,6 @@ class IncidentsController < ApplicationController
         end
     end
     
-    def incidents_chart
-        @incidents_by_department = Incident.group(:department).count
-    end
     
     private
         def incident_params
@@ -49,6 +46,4 @@ class IncidentsController < ApplicationController
         def set_incident
             @incident = Incident.find(params[:id])
         end
-        
-
 end
