@@ -16,7 +16,11 @@ The incident_tracker web app allows users to:
 
 * PostgreSQL
 
-
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
 == Testing
 
 Feature specs were written using RSpec and Capybara. To run a test, use the following code:
