@@ -34,7 +34,6 @@ Make sure you have Bundler[bundler.io] and the {Heroku Toolbelt}[https://toolbel
 == Deployment with Heroku
 
 ```
-
 git clone https://github.com/gorskc/incident_tracker.git
 cd incident_tracker
 bundle install
@@ -43,5 +42,4 @@ git push heroku master
 heroku run rake db:migrate
 heroku ps:scale web=1
 heroku ps
-
 ```
