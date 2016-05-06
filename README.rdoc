@@ -1,28 +1,45 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The incident_tracker project was developed to provide a platform for tracking and documenting workplace incidents and injuries. Workplace injuries are unfortunately common, but often preventable. 
+The incident_tracker web app allows users to:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* enter details about incidents
+* record injuries
+* create users
+* create corrective actions to prevent future injuries
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Built With::
+* Ruby version 2.3.0
+
+* Rails version 4.2.5
+
+* PostgreSQL
+
+
+Testing::
+
+Feature specs were written using RSpec and Capybara. To run a test, use the following code:
+
+bundle exec rspec spec
+
+
+Getting Started::
+
+Make sure you have Bundler[bundler.io] and the {Heroku Toolbelt}[https://toolbelt.heroku.com] installed.
+
+
+Deployment::
+
+git clone https://github.com/gorskc/incident_tracker.git
+cd incident_tracker
+bundle install
+
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku ps:scale web=1
+heroku ps
+
+
+
