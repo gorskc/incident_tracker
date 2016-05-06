@@ -25,7 +25,7 @@ Feature specs were written using RSpec and Capybara. To run a test, use the foll
 
 ## Getting Started ##
 
-Make sure you have Bundler[bundler.io] and the {Heroku Toolbelt}[https://toolbelt.heroku.com] installed.
+Make sure you have [Bundler](bundler.io) and the [Heroku Toolbelt](https://toolbelt.heroku.com) installed.
 
 
 ## Deployment with Heroku ##
