@@ -21,9 +21,7 @@ The incident_tracker web app allows users to:
 
 Feature specs were written using RSpec and Capybara. To run a test, use the following code:
 
-```
-bundle exec rspec spec
-```
+`bundle exec rspec spec`
 
 
 == Getting Started
