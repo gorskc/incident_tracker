@@ -1,5 +1,7 @@
 # README #
 
+![Alt text]( incident_tracker/images/Capture.PNG )
+
 The incident_tracker project was developed to provide a platform for tracking and documenting workplace incidents and injuries. Workplace injuries are unfortunately common, but often preventable. 
 The incident_tracker web app allows users to:
 
