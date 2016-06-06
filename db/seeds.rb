@@ -18,14 +18,14 @@ DEPARTMENTS = ["American Ethnic Studies", "American Indian Studies", "Anthropolo
         department: DEPARTMENTS.sample,
         job_title: Faker::Name.title,
         date_of_hire: Faker::Date.backward(522),
-        description: Faker::Hacker.phrases,
+        description: Faker::Lorem.sentence,
         date_of_incident: Faker::Date.between('2016-01-01',Date.today),
         date_reported: Faker::Date.between('2016-01-01',Date.today),
         location_of_incident: Faker::Address.building_number,
         type_of_incident: INCIDENT_TYPE.sample,
         supervisor_last_name: Faker::Name.last_name,
         supervisor_first_name: Faker::Name.first_name,
-        suggested_corrective_action: Faker::Hacker.phrases
+        suggested_corrective_action: Faker::Lorem.sentence
         )
 end
 # This file should contain all the record creation needed to seed the database with its default values.

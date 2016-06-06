@@ -1,3 +1,14 @@
+<div class="button-group">
+  <%= link_to_unless_current('English', {locale: 'en' }, {class: 'button'}) %>
+  <%= link_to_unless_current('German', {locale: 'de' }, {class: 'button'}) %>
+  <%= link_to_unless_current('Spanish', {locale: 'es' }, {class: 'button'}) %>
+</div>
+<!-- add link to translations in nav bar
+routing set up so that everything is wrapped in locale scope
+new translations automatically added to english rather than appropriate translation
+-->
+
+<h1><%= t('.title') %></h1>
 <div id="incidents_chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 <script type='text/javascript'>
   $(document).ready(function(){
@@ -28,8 +39,8 @@
         },
         series: [{
             name: 'Incidents',
-            data: 
-                <%= 
+            data:
+                <%=
                     @incidents_month.map do |month, incident|
                         [incident.count]
                     end.to_json.html_safe
@@ -38,24 +49,24 @@
     });
 });
 </script>
-<%= "#{pluralize(@incidents.count, 'incident')}" %>
+<%= "#{pluralize(@incidents.count, 'incident')} #{t('.subtitle')}" %>
     <table class="hover" id="incidents">
     <thead>
         <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Department</td>
-            <td>Job Title</td>
-            <td>Date of Hire</td>
-            <td>Description</td>
-            <td>Date of Incident</td>
-            <td>Date Reported</td>
-            <td>Location of Incident</td>
-            <td>Type of Incident</td>
-            <td>Supervisor Last Name</td>
-            <td>Supervisor First Name</td>
-            <td>Suggested Corrective Action</td>
-            <td colspan="2">Action</td>
+            <td><%= Incident.human_attribute_name(:first_name) %></td>
+            <td><%= Incident.human_attribute_name(:last_name) %></td>
+            <td><%= Incident.human_attribute_name(:department) %></td>
+            <td><%= Incident.human_attribute_name(:job_title) %></td>
+            <td><%= Incident.human_attribute_name(:date_of_hire) %></td>
+            <td><%= Incident.human_attribute_name(:description) %></td>
+            <td><%= Incident.human_attribute_name(:date_of_incident) %></td>
+            <td><%= Incident.human_attribute_name(:date_reported) %></td>
+            <td><%= Incident.human_attribute_name(:location_of_incident) %></td>
+            <td><%= Incident.human_attribute_name(:type_of_incident) %></td>
+            <td><%= Incident.human_attribute_name(:supervisor_last_name) %></td>
+            <td><%= Incident.human_attribute_name(:supervisor_first_name) %></td>
+            <td><%= Incident.human_attribute_name(:suggested_corrective_action) %></td>
+            <td colspan="2"><%= t('.action') %></td>
         </tr>
     </thead>
     <tbody>
@@ -65,12 +76,12 @@
             <td><%= incident.last_name %></td>
             <td><%= incident.department %></td>
             <td><%= incident.job_title %></td>
-            <td><%= incident.date_of_hire %></td>
+            <td><%= incident.date_of_hire.to_formatted_s(:long) %></td>
             <td><%= incident.description.truncate_words(10) %></td>
-            <td><%= incident.date_of_incident %></td>
-            <td><%= incident.date_reported %></td>
-            <td><%= incident.location_of_incident %></td>        
-            <td><%= incident.type_of_incident %></td>    
+            <td><%= incident.date_of_incident.to_formatted_s(:long) %></td>
+            <td><%= incident.date_reported.to_formatted_s(:short) %></td>
+            <td><%= incident.location_of_incident %></td>
+            <td><%= incident.type_of_incident %></td>
             <td><%= incident.supervisor_last_name %></td>
             <td><%= incident.supervisor_first_name %></td>
             <td><%= incident.suggested_corrective_action.truncate_words(10) %></td>

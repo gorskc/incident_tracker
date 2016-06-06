@@ -13,57 +13,56 @@
 
 ActiveRecord::Schema.define(version: 20160225002602) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "corrective_actions", force: :cascade do |t|
-    t.integer  "incident_id"
-    t.text     "action"
+    t.integer  "incident_id",              limit: 4
+    t.text     "action",                   limit: 65535
     t.date     "expected_completion_date"
     t.date     "actual_completion_date"
     t.boolean  "complete"
-    t.integer  "incidents_id"
+    t.integer  "incidents_id",             limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "corrective_actions", ["incident_id"], name: "fk_rails_9aac145ab5", using: :btree
   add_index "corrective_actions", ["incidents_id"], name: "index_corrective_actions_on_incidents_id", using: :btree
 
   create_table "incidents", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "department"
-    t.string   "job_title"
+    t.string   "first_name",                  limit: 255
+    t.string   "last_name",                   limit: 255
+    t.string   "department",                  limit: 255
+    t.string   "job_title",                   limit: 255
     t.date     "date_of_hire"
-    t.text     "description"
+    t.text     "description",                 limit: 65535
     t.date     "date_of_incident"
     t.date     "date_reported"
-    t.text     "location_of_incident"
-    t.string   "type_of_incident"
-    t.string   "property_damage"
-    t.string   "supervisor_last_name"
-    t.string   "supervisor_first_name"
-    t.text     "suggested_corrective_action"
+    t.text     "location_of_incident",        limit: 65535
+    t.string   "type_of_incident",            limit: 255
+    t.string   "property_damage",             limit: 255
+    t.string   "supervisor_last_name",        limit: 255
+    t.string   "supervisor_first_name",       limit: 255
+    t.text     "suggested_corrective_action", limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "injuries", force: :cascade do |t|
-    t.integer  "incident_id"
-    t.string   "injury_type"
-    t.string   "affected_body_part"
-    t.string   "treatment"
-    t.integer  "incidents_id"
+    t.integer  "incident_id",        limit: 4
+    t.string   "injury_type",        limit: 255
+    t.string   "affected_body_part", limit: 255
+    t.string   "treatment",          limit: 255
+    t.integer  "incidents_id",       limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "injuries", ["incident_id"], name: "fk_rails_b46b812078", using: :btree
   add_index "injuries", ["incidents_id"], name: "index_injuries_on_incidents_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

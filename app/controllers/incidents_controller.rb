@@ -1,49 +1,84 @@
 class IncidentsController < ApplicationController
-    before_action :set_incident, only: [:show, :update, :edit]
-    
-    def index
-        @incidents = Incident.all 
-        @incidents_month = @incidents.group_by { |i| i.date_of_incident.beginning_of_month }
+
+  def index
+    load_incidents
+    load_incidents_month
+  end
+
+  def new
+    build_incident
+  end
+
+  def create
+    build_incident
+    save_incident or render 'new'
+  end
+
+  def show
+    load_incident
+    load_related
+  end
+
+  def edit
+    load_incident
+    build_incident
+  end
+
+  def update
+    load_incident
+    build_incident
+    save_incident or render 'edit'
+  end
+
+  private
+    def load_incidents
+      @incidents ||= incident_scope.to_a
     end
-    
-    def new
-        @incident = Incident.new
+
+    def load_incidents_month
+      @incidents_month = @incidents.group_by { |i| i.date_of_incident.beginning_of_month }
     end
-    
-    def create
-        @incident = Incident.new(incident_params)
-        if @incident.save
-            redirect_to @incident, notice: 'Incident successfully created.'
-        else
-            flash.now[:error] = 'Error: Incident was not saved.'
-            render :new
-        end
+
+    def load_incident
+      @incident ||= incident_scope.find(params[:id])
     end
-    
-    def show
-        @incident = Incident.find(params[:id])
-        @injuries = @incident.injuries.all
-        @corrective_actions = @incident.corrective_actions.all
+
+    def load_related
+      @injuries ||= @incident.injuries.all
+      @corrective_actions ||= @incident.corrective_actions.all
     end
-    
-    def edit
+
+    def build_incident
+      @incident ||= incident_scope.build
+      @incident.attributes = incident_params
     end
-    
-    def update
-        if @incident.update(incident_params)
-            redirect_to @incident, notice: 'Incident successfully updated'
-        else
-            render :edit
-        end
+
+    def save_incident
+      if @incident.id == nil && @incident.save
+        redirect_to @incident, notice: "Incident successfully created."
+      else
+        redirect_to @incident, notice: "Incident successfully modified."
+      end
     end
-    
-    
-    private
-        def incident_params
-            params.require(:incident).permit(:first_name, :last_name, :department, :job_title, :date_of_hire, :description, :date_of_incident, :date_reported, :location_of_incident, :type_of_incident, :property_damage, :supervisor_last_name, :supervisor_first_name, :suggested_corrective_action)
-        end
-        
-        def set_incident
-            @incident = Incident.find(params[:id])
-        end
+
+    def incident_params
+      incident_params = params[:incident]
+      incident_params ? incident_params.permit(:first_name, :last_name,
+                                             :department,
+                                             :job_title,
+                                             :date_of_hire,
+                                             :supervisor_first_name,
+                                             :supervisor_last_name,
+                                             :description,
+                                             :date_of_incident,
+                                             :date_reported,
+                                             :location_of_incident,
+                                             :type_of_incident,
+                                             :suggested_corrective_action) : {}
+    end
+
+    def incident_scope
+      Incident.all
+    end
 end
+
