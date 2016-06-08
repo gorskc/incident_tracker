@@ -1,0 +1,43 @@
+de:
+  incidents:
+    index:
+      title: 'Liste von Vorfälle'
+      subtitle: 'in der Datenbank'
+      action: 'Aktion'
+  activerecord:
+    attributes:
+      incident:
+        description: 'Beschreibung '
+        date_of_incident: 'Vorfall Datum'
+        date_reported: 'Datum berichtet'
+        location_of_incident: 'Lage des Vorfalls'
+        type_of_incident: 'Art des Vorfalls'
+        property_damage: 'Sachschäden'
+        description_of_damage: 'Beschreibung des Schadens'
+        suggested_corrective_action: 'vorgeschlagen Korrekturmaßnahme'
+  injuries:
+    index:
+      title: 'Verletzungen Auflistung'
+      subtitle: 'in der Datenbank'
+      action: 'Aktion'
+  activerecord:
+    attributes:
+      injury:
+        affected_body_part: 'betroffenen Körperteil'
+        injury_type: 'Verletzung Typ'
+        treatment: 'Behandlung'
+  employees:
+    index:
+      title: 'Mitarbeiter Auflistung'
+      subtitle: 'in der Datenbank'
+      action: 'Aktion'
+  activerecord:
+    attributes:
+      employee:
+        first_name: 'Vorname'
+        last_name: 'Nachname'
+        department: 'Abteilung'
+        job_title: 'Berufsbezeichnung'
+        date_of_hire: 'Einstellungsdatum'
+        supervisor_last_name: 'Oberaufseher Nachname'
+        supervisor_first_name: 'Oberaufseher Vorname'

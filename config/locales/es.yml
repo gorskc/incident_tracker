@@ -1,0 +1,43 @@
+es:
+  incidents:
+    index:
+      title: 'incidentes del anuncio'
+      subtitle: 'en la base de datos'
+      action: 'acción'
+  activerecord:
+    attributes:
+      incident:
+        description: 'descripción'
+        date_of_incident: 'fecha del incidente'
+        date_reported: 'fecha de aviso'
+        location_of_incident: 'ubicación de incidente'
+        type_of_incident: 'tipo de incidente'
+        property_damage: 'daño a la propiedad'
+        description_of_damage: 'descripción de los daños'
+        suggested_corrective_action: 'acción correctiva sugerida'
+  injuries:
+    index:
+      title: 'lesiones del anuncio'
+      subtitle: 'en la base de datos'
+      action: 'acción'
+  activerecord:
+    attributes:
+      injury:
+        affected_body_part: 'parte del cuerpo afectada'
+        injury_type: 'tipo de lesión'
+        treatment: 'tratamiento'
+  employees:
+    index:
+      title: 'los empleados del anuncio'
+      subtitle: 'en la base de datos'
+      action: 'acción'
+  activerecord:
+    attributes:
+      employee:
+        first_name: 'nombre de pila'
+        last_name: 'apellido'
+        department: 'Departamento'
+        job_title: 'título profesional'
+        date_of_hire: 'fecha de contratación'
+        supervisor_last_name: 'supervisor de apellido'
+        supervisor_first_name: 'supervisor de nombre'
